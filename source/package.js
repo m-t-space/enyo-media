@@ -1,7 +1,7 @@
 enyo.depends(
 	"media.js",
-	"base",
-	"engines",
+	"html5",
+	"plugins",
 	"overlay",
 	"Audio.js",
 	"Video.js"
