@@ -23,12 +23,24 @@ enyo.media = {
 		"volumechange",
 		"waiting"
 	],
-	// Finds the media engine from any contained component
-	// For example, can get the media engine from an overlay control
-	engine: function(c) {
+	audioTypes: {
+		"mp3":"audio/mpeg",
+		"ogg":"audio/ogg",
+		"oga":"audio/ogg",
+		"wav":"audio/wav",
+		"webm":"audio/webm"
+	},
+	videoTypes: {
+		"mp4":"video/mp4",
+		"m4v":"video/x-m4v",
+		"ogg":"video/ogg",
+		"ogv":"video/ogg",
+		"webm":"video/webm"
+	},
+	getParentMedia: function(c) {
 		while(c) {
 			if(c.isMedia) {
-				return c.$.player;
+				return c;
 			}
 			c = c.parent;
 		}
